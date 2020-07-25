@@ -1,5 +1,5 @@
 <?php
-
+  error_reporting(E_ERROR | E_PARSE);
   session_start();
 
   if (isset($_SESSION['user_id'])) {
@@ -13,15 +13,12 @@
     $records->bindParam(':usuario', $_POST['usuario']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
-
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
         $_SESSION['user_id'] = $results['id'];
         header("Location: /login");
       } else {
         $message = 'Contraseña incorrecta :c';
       }
-    
-
   }
 
 ?>

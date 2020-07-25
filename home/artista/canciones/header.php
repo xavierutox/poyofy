@@ -40,8 +40,8 @@
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-            <a href="ver.php">Ver</a>
-            <a href="crear.php">Crear</a>
+            <a href="/home/artista/canciones/ver.php">Ver</a>
+            <a href="/home/artista/canciones/crear.php">Crear</a>
             </div>
         </div>
         <div class="dropdown">
@@ -58,8 +58,8 @@
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-            <a href="#">Ver</a>
-            <a href="#">Seguidos</a>
+            <a href="/home/artista/playlist/index.php">Explorar</a>
+            <a href="/home/artista/playlist/seguidas.php">Seguidas</a>
             </div>
         </div>
         <div class="dropdown">
@@ -67,9 +67,8 @@
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-            <a href="#">Ver perfil</a>
-            <a href="#">Seguidos</a>
-            <a href="#">Configuracion</a>
+            <a href="/home/artista/perfil.php">Ver perfil</a>
+            <a href="/home/artista/config.php">Configuracion</a>
             <a href="/login/logout.php">Cerrar sesion</a>
             </div>
         </div>

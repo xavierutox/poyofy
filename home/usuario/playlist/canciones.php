@@ -4,8 +4,8 @@ if(!isset($_SESSION))
 { 
     session_start(); 
 } 
-    $records = $conn->prepare('SELECT id, nombre, imagen, id_creador, seguidores FROM canciones');
-    $records->bindParam(':id', $_SESSION['user_id']);
+    $records = $conn->prepare('SELECT id, nombre, imagen, id_creador, seguidores FROM playlist_content WHERE id_playlist=:id');
+    $records->bindParam(':id', $_SESSION['playlist']);
     $records->execute();
     $results = $records->fetchAll();
 
@@ -24,7 +24,7 @@ if(!isset($_SESSION))
         foreach ($results as $result){
           if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['añadir_'.$result['id']])){
             print '<div class="footer">';
-            print '<form action="index.php" method="POST">';
+            print '<form action="canciones.php" method="POST">';
             print '<label for="playlist">Elige una playlist:</label>';
             print '<select name="playlist" id="playlist">';
             #hora de imprimir todas las playlist del usuario
@@ -73,7 +73,7 @@ if(!isset($_SESSION))
           print '<div class="gallery"><a target="_blank" href="'.$result['imagen'].'">';
           print '<img src="'.$result['imagen'].'" alt="Cinque Terre" width="500" height="400" class="foto"></a>';
           print '<div class="desc"><b>'.$result['nombre'].'</b><br>Creador: '.$res[0]['usuario'].'</div>';
-          print '<form action="index.php" method="post">';
+          print '<form action="canciones.php" method="post">';
           print '<input type="submit" class="button" name="añadir_'.$result['id'].'" value="añadir" />';
           print '<input type="submit" class="button" name="like_'.$result['id'].'" value="like" />';
           print ' &nbsp; <img src="http://clipart-library.com/img/1118478.png" style=width:15px height:15px; > &nbsp;'.$seguidores.'</form></div>';

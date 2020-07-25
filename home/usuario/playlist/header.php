@@ -31,7 +31,7 @@
   </head>
   <body>
     <div class="navbar">
-    <a href="/home/usuario/index.php">Home</a>
+        <a href="/home/usuario/index.php">Home</a>
         <div class="dropdown">
             <button class="dropbtn">Canciones
             <i class="fa fa-caret-down"></i>
@@ -41,14 +41,15 @@
             <a href="/home/usuario/canciones/liked.php">Me gustan</a>
             </div>
         </div>
-        <a href="/home/usuario/index.php">Albumes</a>
+        <a href="/home/usuario/album/index.php">Albumes</a>
         <div class="dropdown">
             <button class="dropbtn">Playlist
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-            <a href="#">Ver</a>
-            <a href="#">Seguidas</a>
+            <a href="/home/usuario/playlist/index.php">Mis playlist</a>
+            <a href="/home/usuario/playlist/ver.php">Explorar</a>
+            <a href="/home/usuario/playlist/seguidas.php">Seguidas</a>
             <a href="/home/usuario/playlist/crear.php">Crear</a>
             </div>
         </div>
@@ -57,9 +58,8 @@
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-            <a href="#">Ver perfil</a>
-            <a href="#">Seguidos</a>
-            <a href="#">Configuracion</a>
+            <a href="/home/usuario/perfil.php">Ver perfil</a>
+            <a href="/home/usuario/config.php">Configuracion</a>
             <a href="/login/logout.php">Cerrar sesion</a>
             </div>
         </div>

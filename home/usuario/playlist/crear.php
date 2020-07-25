@@ -16,7 +16,7 @@
     $stmt->bindParam(':imagen', $_POST['imagen']);
     $stmt->bindParam(':creador', $_SESSION['user_id']);
     if ($stmt->execute()) {
-      print 'Se creo la playlist';
+      print ' <div class="footer">se creo la playlist</div>';
     } else {
       print  'Ocurrio un error al crear la playlist';
     }
@@ -44,4 +44,16 @@
     </form>
 
   </body>
+  <style>
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
 </html>

@@ -10,13 +10,13 @@
 
 
   if (!empty($_POST['nombre']) && !empty($_POST['imagen'])) {
-    $sql = "INSERT INTO album (nombre, id_compositor, imagen) VALUES (:nombre, :imagen, :creador)";
+    $sql = "INSERT INTO album (nombre, id_compositor, imagen) VALUES (:nombre, :creador, :imagen)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':nombre', $_POST['nombre']);
     $stmt->bindParam(':imagen', $_POST['imagen']);
     $stmt->bindParam(':creador', $_SESSION['user_id']);
     if ($stmt->execute()) {
-      print 'Se creo el album';
+      print ' <div class="footer">se creo el album</div>';
     } else {
       print  'Ocurrio un error al crear el album';
     }
@@ -38,10 +38,22 @@
     <h1>Crear album</h1>
 
     <form action="crear.php" method="POST">
-      <input name="nombre" type="text" placeholder="Ingrese nombre de la playlist">
+      <input name="nombre" type="text" placeholder="Ingrese nombre del album">
       <input name="imagen" type="text" placeholder="Ingrese imagen">
       <input type="submit" value="Submit">
     </form>
 
   </body>
+  <style>
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
 </html>
